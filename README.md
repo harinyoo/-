@@ -1,2 +1,2 @@
 # BAEKJOON
-This repository is for studying C++.
+This repository is for studying algorithms.
