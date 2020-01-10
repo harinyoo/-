@@ -1,3 +1,4 @@
-단계별로 풀어보기
-- C++
-- CLion
+Solving Problems Step by Step
+- Used Device : Mac
+- Used IDE : CLion
+- Used Language : C++
