@@ -1,25 +1,24 @@
 #include <iostream>
-#include <string>
 using namespace std;
 
 int main() {
-    int N;
-    cin >> N;
-
+    int n;
+    cin >> n;
+    int *arr = new int [n];
+    
     string str;
     cin >> str;
-
-    int arr[N];
-    for(int i=0; i<N+1; i++) {
-        arr[i] = str[i] - '0';
+    
+    for(int i=0; i<str.length(); i++) {
+        arr[i] = str[i]-48;
     }
-
+    
     int sum = 0;
-    for(int i=0; i<N; i++) {
-        sum += arr[i];
+    for(int j=0; j<n; j++) {
+        sum += arr[j];
     }
-
+    
     cout << sum;
-
+    delete[] arr;
     return 0;
 }
