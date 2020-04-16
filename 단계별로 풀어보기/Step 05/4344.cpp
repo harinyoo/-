@@ -2,30 +2,29 @@
 using namespace std;
 
 int main() {
-    int test;
-    cin >> test;
-    float *ratio = new float[test];
-    for(int i=0; i<test; i++) {
-        ratio[i] = 0;
-        int student;
-        cin >> student;
-        int *score = new int[student];
+    int C;
+    cin >> C;
+
+    int i;
+    for(i=0; i<C; i++) {
+        int N;
+        cin >> N;
+        int *score = new int[N];
+        int j;
         int sum = 0;
-        for(int j=0; j<student; j++) {
+        float avg;
+        for(j=0; j<N; j++) {
             cin >> score[j];
             sum += score[j];
         }
-        float average = float(sum)/float(student);
+        avg = (float)sum/N;
         int cnt = 0;
-        for(int k=0; k<student; k++) {
-            if(average < score[k]) cnt++;
+        for(j=0; j<N; j++) {
+            if (score[j] > avg) cnt++;
         }
-        ratio[i] = float(cnt)/float(student)*100;
-    }
-    for(int l=0; l<test; l++) {
         cout << fixed;
         cout.precision(3);
-        cout << ratio[l] << "%" << endl;
+        cout << (float)cnt/N*100 << "%" << endl;
     }
     return 0;
 }
