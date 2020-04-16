@@ -1,27 +1,31 @@
 #include <iostream>
 using namespace std;
 
-int d_fun(int n) {
+int d_func(int n) {
+    int y = 0;
     int result = n;
-    while(n != 0) {
-        result += n%10;
+    while(n != 0){
+        y = n%10;
+        result += y;
         n /= 10;
     }
     return result;
 }
 
 int main() {
-    int arr[10000];
-    for(int i=0; i<10000; i++) {
-        arr[i] = i+1;
-    }
-    for(int j=0; j<10000; j++) {
-        for(int k=0; k<10000; k++) {
-            if(d_fun(j) == arr[k]) arr[k] = 0;
+    int self_num[10000];
+    int i;
+    for(i=0; i<10000; i++) self_num[i] = 1;
+    for(i=0; i<10000; i++) {
+        int tmp = i+1;
+        while(d_func(tmp) <= 10000) {
+            self_num[d_func(tmp)-1] = 0;
+            tmp = d_func(tmp);
         }
     }
-    for(int l=0; l<10000; l++) {
-        if(arr[l] != 0) cout << arr[l] << endl;
+
+    for(i=0; i<10000; i++) {
+        if(self_num[i]!=0) cout << i+1 << endl;
     }
     return 0;
 }
