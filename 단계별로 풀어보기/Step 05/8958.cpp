@@ -1,27 +1,23 @@
 #include <iostream>
-#include <string>
-#include <string.h>
 using namespace std;
 
 int main() {
-    int size = 0;
-    cin >> size;
-    string str;
-    int score = 0;
-    int *result = new int[size];
+    int N;
+    cin >> N;
 
-    for (int i = 0; i < size; i++) {
-        result[i] = 0;
-        score = 0;
-        cin >> str;
-        for (int j = 0; j < str.size(); j++) {
-            if (str[j] == 'O') score++;
-            else score = 0;
-            result[i] += score;
+    int i;
+    string ans;
+    for(i=0; i<N; i++) {
+        cin >> ans;
+        int tmp = 0;
+        int score = 0;
+        int j;
+        for(j=0; j<ans.size(); j++) {
+            if(ans[j] == 'O') tmp++;
+            else tmp = 0;
+            score += tmp;
         }
-    }
-    for (int k = 0; k < size; k++) {
-        cout << result[k] << endl;
+        cout << score << endl;
     }
     return 0;
 }
