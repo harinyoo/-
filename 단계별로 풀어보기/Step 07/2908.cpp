@@ -2,20 +2,13 @@
 using namespace std;
 
 int main() {
-    string x, y;
-    cin >> x >> y;
+    int a, b;
+    cin >> a >> b;
 
-    string bigger;
-    for(int i=2; i>=0; i--) {
-        if(x[i]>y[i]) {
-            bigger = x;
-            break;
-        }
-        else if(x[i]<y[i]) {
-            bigger = y;
-            break;
-        }
-    }
-    cout << bigger[2] << bigger[1] << bigger[0];
+    int a_ = a%10*100 + (a/10%10)*10 + a/100;
+    int b_ = b%10*100 + (b/10%10)*10 + b/100;
+
+    if(a_ > b_) cout << a_;
+    else cout << b_;
     return 0;
 }
