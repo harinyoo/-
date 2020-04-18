@@ -5,35 +5,32 @@ int main() {
     string str;
     cin >> str;
 
-    for(int i=0; i<str.length(); i++) {
-        if(str[i]>='a') str[i] -= 32;
+    int i;
+    for(i=0; i<str.size(); i++) {
+        if(str.at(i)>='a') str.at(i) -= 32;
     }
 
-    char alphabet[26];
-    for(int j=0; j<26; j++) alphabet[j] = 'A'+j;
-
-    int cnt[26]={0};
-    for(int k=0; k<str.length(); k++) {
-        for(int l=0; l<26; l++) {
-            if(str[k]==alphabet[l]) cnt[l]++;
-        }
+    int check[26];
+    fill_n(check, 26, 0);
+    for(i=0; i<str.size(); i++) {
+        check[str.at(i)-'A']++;
     }
 
-    int max = cnt[0];
+    int max = check[0];
     int idx = 0;
-    for(int m=0; m<26; m++) {
-        if(max<cnt[m]) {
-            max = cnt[m];
-            idx = m;
+    for(i=0; i<26; i++) {
+        if(max<check[i]) {
+            max = check[i];
+            idx = i;
         }
     }
 
-    int tmp=0;
-    for(int n=0; n<26; n++) {
-        if(max==cnt[n]) tmp++;
+    int cnt = 0;
+    for(i=0; i<26; i++) {
+        if(check[i] == max) cnt++;
     }
 
-    if(tmp==1) cout << alphabet[idx];
+    if(cnt==1) cout << char(idx+'A');
     else cout << "?";
     return 0;
 }
