@@ -5,14 +5,14 @@ int main() {
     string str;
     getline(cin, str);
 
-    int i;
     int cnt = 0;
-    for(i=0; i<str.length(); i++) {
-        if(str[i] == ' ') cnt++;
+    int i;
+    for(i=0; i<str.size(); i++) {
+        if(str.at(i) == ' ') cnt++;
     }
 
-    if(str[0] == ' ') cnt--;
-    if(str[str.length()-1] == ' ') cnt--;
+    if(str.at(0) ==' ') cnt--;
+    if(str.at(str.size()-1)==' ') cnt--;
 
     cout << cnt+1;
     return 0;
