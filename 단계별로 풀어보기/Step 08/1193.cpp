@@ -2,22 +2,16 @@
 using namespace std;
 
 int main() {
-    int num;
-    cin >> num;
+    int X;
+    cin >> X;
 
-    int x = 2;
-    while(num<(x-1)*(x-2)/2+1 || x*(x-1)/2<num) { x++; }
-
-    int below=1, above=1;
-    if(x%2 == 0) {
-        below = num - ((x-1)*(x-2)/2+1) + 1;
-        above = x - below;
-    }
-    else if(x%2 != 0) {
-        above = num - ((x-1)*(x-2)/2+1) + 1;
-        below = x - above;
-    }
-
-    cout << above << "/" << below;
+    if(X==1) cout << 1 << "/" << 1;
+    else {
+        int i=1;
+        while(X<2+(i+2)*(i-1)/2 || 2+(i+3)*i/2<=X){ i++; }
+        int a = X-(2+(i+2)*(i-1)/2);
+        if((i+2)%2 == 0) cout << i+1-a << "/" << 1+a;
+        else cout << 1+a << "/" << i+1-a;
+        }
     return 0;
 }
