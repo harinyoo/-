@@ -12,9 +12,9 @@ int main() {
     int i, j;
     for(i=2; i<1000001; i++) arr[i] = true;
 
-    for(i=2; i*i<=1000000; i++) {
+    for(i=2; i*i<1000001; i++) {
         if(arr[i]){
-            for(j=i+i; j<=1000000; j+=i) {
+            for(j=i+i; j<1000001; j+=i) {
                 arr[j] = false;
             }
         }
