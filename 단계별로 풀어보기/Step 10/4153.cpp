@@ -5,7 +5,6 @@ using namespace std;
 
 int main(){
     int length[3];
-    int i, j, tmp;
     while(cin >> length[0] >> length[1] >> length[2]){
         if(length[0]==0 || length[1]==0 || length[2]==0) break;
         else{
