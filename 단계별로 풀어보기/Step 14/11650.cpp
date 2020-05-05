@@ -3,29 +3,6 @@
 #include <algorithm>
 using namespace std;
 
-//void sorting(vector<pair<int, int>> &vec) {
-//    int i, j;
-//    pair<int, int> tmp;
-//
-//    for(i=0; i<vec.size()-1; i++) {
-//        for(j=0; j<vec.size()-1-i; j++) {
-//            if(vec[j].first > vec[j+1].first) {
-//                tmp = vec[j];
-//                vec[j] = vec[j+1];
-//                vec[j+1] = tmp;
-//            }
-//
-//            else if(vec[j].first == vec[j+1].first) {
-//                if(vec[j].second > vec[j+1].second) {
-//                    tmp = vec[j];
-//                    vec[j] = vec[j+1];
-//                    vec[j+1] = tmp;
-//                }
-//            }
-//        }
-//    }
-//}
-
 int main() {
     int N, x, y;
     int i;
@@ -37,7 +14,6 @@ int main() {
         location.emplace_back(make_pair(x, y));
     }
 
-//    sorting(location);
     sort(location.begin(), location.end());
 
     for(i=0; i<N; i++) {
