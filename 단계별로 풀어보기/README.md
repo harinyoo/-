@@ -1,4 +1,4 @@
 # Solving Problems Step by Step
 - Used Device : Mac
-- Used IDE : CLion
-- Used Language : C++
+- Used IDE : CLion, ATOM
+- Used Language : C++, Python
